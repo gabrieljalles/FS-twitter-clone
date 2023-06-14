@@ -37,5 +37,17 @@
     "postcss": "^8.4.23",
     "prisma": "^4.15.0",
     "tailwindcss": "^3.3.2"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrieljalles/FS-twitter-clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrieljalles/FS-twitter-clone/issues"
+  },
+  "homepage": "https://github.com/gabrieljalles/FS-twitter-clone#readme"
 }
