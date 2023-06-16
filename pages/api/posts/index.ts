@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import serverAuth from "@/libs/serverAuth";
 import prisma from "@/libs/prismadb";
+import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== 'POST' && req.method !== 'GET') {
@@ -11,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
 
         if (req.method === 'POST') {
-            const { currentUser } = await serverAuth(req);
+            const { currentUser } = await serverAuth(req, res);
             const { body } = req.body;
 
             const post = await prisma.post.create({
