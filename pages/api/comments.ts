@@ -6,33 +6,27 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
 ) {
-    if (req.method !== 'POST' && req.method !== 'DELETE') {
+    if(req.method !== 'POST'){
         return res.status(405).end();
     }
 
     try {
-        const { postId } = req.body;
-        const { currentUser } = await serverAuth(req, res);
+        const {currentUser} = await serverAuth(req, res);
+        const {body} = req.body;
+        const { postId} = req.query;
 
         if(!postId || typeof postId !== 'string'){
-            throw new Error('Invalid ID');
+            throw new Error(`Invalid ID`);
         }
 
-        const post = await prisma.post.findUnique({
-            where: {
-                id: postId,
+        const comment = await prisma.comment.create({
+            data: {
+                body,
+                userId: currentUser.id,
+                postId
             }
         });
-
-        if(!post){
-            throw new Error('Invalid ID');
-        }
-
-        let updatedLikedIds = [...post(post.likeIds || [])];
-
-        if (req.method === 'POST') {
-            updatedLikedIds.push(currentUser.id);
-        }
+        
 
         //notifications
         try {
@@ -45,7 +39,7 @@ export default async function handler(
             if(post?.userId) {
                 await prisma.notification.create({
                 data: {
-                    body: 'Someone liked your tweet',
+                    body: 'Someone replied to your tweet',
                     userId: post.userId
                 }
                 });
@@ -62,24 +56,14 @@ export default async function handler(
         } catch(error){
             console.log(error);
         }
-        
-        if(req.method === 'DELETE') {
-            updatedLikedIds = updatedLikedIds.filter((likedId) => likedId !== currentUser.id);
-        }
 
-        const updatedPost = await prisma.post.update({
-            where: {
-                id: postId,
-            },
-            data: {
-                likeIds: updatedLikedIds
-            }
-        })
+        return res.status(200).json(comment);
 
-        return res.status(200).json(updatedPost);
 
-    } catch (error) {
+    }catch(error){
         console.log(error);
         return res.status(400).end();
     }
+
+
 }

@@ -6,10 +6,7 @@ import usePost from "@/hooks/usePost";
 import Header from '@/components/Header';
 import Form from "@/components/Form";
 import PostItem from "@/components/posts/PostItem";
-
-interface PostViewProps {
-
-}
+import CommentFeed from "@/components/posts/CommentFeed";
 
 
 const Postview = () => {
@@ -36,6 +33,7 @@ const Postview = () => {
                 isComment
                 placeholder='Tweet your reply'
             />
+            <CommentFeed comments={fetchedPost?.comments} />
         </>
     )
 }
