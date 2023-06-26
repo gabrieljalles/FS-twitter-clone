@@ -1,11 +1,14 @@
+import { useRouter } from "next/router";
+import { ClipLoader } from "react-spinners";
+
+import useUser from "@/hooks/useUser";
+
 import Header from "@/components/Header";
 import UserBio from "@/components/users/UserBio";
 import UserHero from "@/components/users/UserHero";
-import useUser from "@/hooks/useUser";
-import { useRouter } from "next/router";
-// clipLoader é usado para colocar carregadores que rodam para simbolizar carregamento da pagina
-import { ClipLoader } from "react-spinners";
 import PostFeed from "../../components/posts/PostFeed";
+
+// clipLoader é usado para colocar carregadores que rodam para simbolizar carregamento da pagina
 
 const UserView = () => {
     const router = useRouter();
@@ -13,7 +16,7 @@ const UserView = () => {
 
     const { data: fetchedUser, isLoading } = useUser(userId as string);
 
-    if (isLoading || !fetchedUser) {
+    if (isLoading || !fetchedUser) { //usado até achar o usuario, um carregador!
         return (
             <div className="
                 flex
