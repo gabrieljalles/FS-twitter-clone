@@ -1,38 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# :bird: Twitter-Clone :bird:
 
-## Getting Started
+## Fullstack
 
-First, run the development server:
+## Used languages:
+  Using React, Tailwind, Next, Prisma, Mongo, NextAuth & Vercel
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## possibilities
+1. You can create and login in your account
+2. You can follow another account
+3. you can like a post
+4. you can se the postfeed
+5. you can see your profile, upload an image and change your background img (cover);
+6. you can see how many people you follow and follow you.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Libraries:
+    "@next-auth/prisma-adapter": "^1.0.6",
+    "@prisma/client": "^4.15.0",
+    "@types/node": "20.2.3",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "date-fns": "^2.30.0",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "next": "13.4.3",
+    "next-auth": "^4.22.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.8.0",
+    "react-spinners": "^0.13.8",
+    "swr": "^2.1.5",
+    "typescript": "5.0.4",
+    "zustand": "^4.3.8"
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
