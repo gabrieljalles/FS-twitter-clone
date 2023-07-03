@@ -36,6 +36,12 @@
     "typescript": "5.0.4",
     "zustand": "^4.3.8"
 
+## Images:
+![image](https://github.com/gabrieljalles/FS-twitter-clone/assets/81190552/dc82821d-fade-4526-b1be-e3beb0e26708)
+![image](https://github.com/gabrieljalles/FS-twitter-clone/assets/81190552/3c8b6cea-dfd6-4fea-9f30-969e9c4ef016)
+![image](https://github.com/gabrieljalles/FS-twitter-clone/assets/81190552/0249f77f-96c7-4f9a-bd75-ad5c29b0eb16)
+
+
 
 
 
